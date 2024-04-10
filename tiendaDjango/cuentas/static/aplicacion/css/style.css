@@ -1,0 +1,86 @@
+.body{
+    background-color:black;
+}
+.card{
+    margin-top: 20px;
+    width: 30em;
+    height: 500px;
+    overflow:hidden;
+    padding: 10px 10px ;
+}
+.card p{
+    font-size: 13px;
+}
+.card{
+    box-shadow: 10px 10px  10px 10px #354b4b;
+    border-radius:  10px;
+}
+.carousel  {
+    display: flex;
+    align-self: center;
+}
+.carousel img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    align-self: center;
+    
+}
+.carousel img {
+    max-width: 100%; 
+    max-height: 200px;
+    justify-items: center;
+  }
+.productos{
+    background-color: #D0ECE7;
+    align-content: center;
+    
+}
+.table{
+    width: 100%;
+    margin-top: 40px;
+    align-content: center;
+    border-collapse: collapse;
+    border: 1px solid black;
+    background-color: white;
+}
+.table th,
+.table td {
+  padding: 8px;
+  border: 1px solid black;
+  
+}
+
+.table th {
+  background-color: #7fb5b5;
+  align-items: center;
+  
+  background-color: white;
+}
+.texto{
+    width: 50%;
+}
+#navbarNav{
+    justify-content: center;
+}
+.nav-item{
+    background-color: #7fb5b5;
+    border: 1px solid #354b4b;
+    border-radius: 10px;
+    margin-right: 2rem;
+}
+.navbar{
+    border: 2px solid #354b4b;
+}
+.textos{
+    display: inline;
+}
+.btn{
+    padding-top: 0px;
+}
+.bttn{
+    margin-top: 40px;
+    vertical-align: bottom;
+}
+

@@ -1,0 +1,44 @@
+{% extends 'aplicacion/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+<h2 style="margin-top: 20px;" >Catalogo</h2>
+<div class="productos d-flex flex-wrap">
+    {% for producto in productos %}
+    <div class="card mx-2 mb-3">
+        <div id="carousel{{ forloop.counter }}" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ producto.imagenP.url }}" class="d-block w-30 " alt="{{ producto.nombre }}" >
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ producto.imagen1.url }}" class="d-block w-30 " alt="{{ producto.nombre }}">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ producto.imagen2.url }}" class="d-block w-30 " alt="{{ producto.nombre }}">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel{{ forloop.counter }}" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel{{ forloop.counter }}" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+        <div class="textos">
+            <h5 class="card-title">{{ producto.nombreproducto }}</h5>
+            <p class="card-text">Precio: ${{ producto.precio_formateado }}</p>
+            <p class="card-text">Stock disponible: {{ producto.cantidad }}</p>
+            <p class="card-text">Especificaciones: {{ producto.especificaciones }}</p>
+        </div>
+        <div class="bttn"><a class="btn btn-primary" data-bs-toggle="collapse" href="{% url 'catalogo' %}" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1">Comprar</a>
+        </div>
+        </div>
+        
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div  style="width: 40rem; ">
+        <div class="card-body">
+            <h5 class="card-title">Ingresar datos del Producto</h5>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy}}
+                <button type="submit">Guardar Producto</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

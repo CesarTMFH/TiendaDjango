@@ -1,0 +1,49 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+<h2>Modulo de productos</h2>
+<a class="btn btn-primary" data-bs-toggle="collapse" href="{% url 'productos' %}" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample1">Agregar nuevo producto</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre del Producto</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Especificaciones</th>
+            <th scope="col">Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombreproducto }}</td>
+            <td>{{ producto.descripcionproducto }}</td>
+            <td>{{ producto.precio_formateado }}</td>
+            <td>{{ producto.cantidad }}</td>
+            <td>{{ producto.especificaciones }}</td>
+            <td>
+
+                <img src="{{ producto.imagenP.url }}" height="100">
+                
+            </td>
+            <td>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="{% url 'borrar' producto.id %}" role="button"
+                    aria-expanded="false" aria-controls="multiCollapseExample1">Borrar</a>
+                
+                
+            </td>
+            <td><a class="btn btn-primary" data-bs-toggle="collapse" href="{% url 'editar' producto.id %}" role="button"
+                aria-expanded="false" aria-controls="multiCollapseExample1">Editar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

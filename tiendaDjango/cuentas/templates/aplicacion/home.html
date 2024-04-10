@@ -1,0 +1,39 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block content %}
+
+<div class="container">
+   <h3 style="margin-top: 20px;">Inicio</h3>
+   <hr>
+
+   <h4>
+      {{ user.username | upper}} Bienvenido
+   </h4>
+   <div class="container">
+      <div class="content">
+         <div class="text" style="margin-top: 20px;">
+            <strong>¡Bienvenido a nuestra tienda online de productos electrónicos!
+
+               </strong>
+         </div>
+         <div class="text" style="margin-top: 20px;">
+            <strong>
+
+               Estamos encantados de darte la bienvenida a nuestro espacio virtual donde encontrarás una amplia gama de
+               productos electrónicos de última generación. Desde dispositivos móviles hasta accesorios inteligentes,
+               estamos aquí para satisfacer tus necesidades tecnológicas.
+
+               </strong>
+         </div>
+         <div class="text" style="margin-top: 20px;">
+            <strong>
+
+               En nuestra tienda, la calidad y la innovación son nuestros pilares fundamentales. Trabajamos
+               constantemente para ofrecerte los productos más avanzados y actualizados del mercado, seleccionando
+               cuidadosamente cada artículo para garantizar tu satisfacción.</strong>
+         </div>
+
+      </div>
+   </div>
+</div>
+{% endblock %}
